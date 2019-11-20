@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>易购(YG.COM)-综合网购首选-正品低价、品质保障、配送及时、轻松购物！</title>
+	<link rel="shortcut icon" href="favicon.ico" images="image/x-icon">
+	<link rel="stylesheet" href="css/main.css">
+	<script>	
+		function $(id) {
+			return typeof id==='string'?document.getElementById(id):id;
+			}
+			window.onload=function(){
+			var index=0;
+			var timer=null;
+			var pic=$("pic").getElementsByTagName("li");
+			var num=$("num").getElementsByTagName("li");
+			var flash=$("flash");
+			var left=$("left");
+			var right=$("right");
+			//单击左箭头
+			left.onclick=function(){
+				index--;
+				if (index<0) {index=num.length-1};
+				changeOption(index);
+			}
+			//单击右箭头
+			right.onclick=function(){
+				index++;
+				if (index>=num.length) {index=0};
+				changeOption(index);
+			}      
+			//鼠标划在窗口上面，停止计时器
+			flash.onmouseover=function(){
+				clearInterval(timer);
+			}
+			//鼠标离开窗口，开启计时器
+			flash.onmouseout=function(){
+				timer=setInterval(run,2000)
+			}
+			//鼠标划在页签上面，停止计时器，手动切换
+			for(var i=0;i<num.length;i++){
+				num[i].id=i;
+				num[i].onmouseover=function(){
+				clearInterval(timer);
+				changeOption(this.id);
+				}
+			}    
+			//定义计时器
+			timer=setInterval(run,2000)
+			//封装函数run
+			function run(){
+				index++;
+				if (index>=num.length) {index=0};
+				changeOption(index);
+			}
+			//封装函数changeOption
+			function changeOption(curindex){
+				console.log(index)
+				for(var j=0;j<num.length;j++){
+				pic[j].style.display="none";
+				num[j].className="";
+				}
+				pic[curindex].style.display="block";
+				num[curindex].className="active";
+				index=curindex;
+			}
+			}
+	</script>
+	<!-- <link rel="stylesheet" href="iconfont.css"> -->
+</head>
+<body>
+	<div class="wrap" id="main">
+		<!-- 左侧悬浮框 -->
+		<section>
+			<div class="nav-left">
+				<img src="images/pic_.png" alt="">
+				<div class="box">
+					<ul>
+						<li><a href="#">家用电器</a></span></li>
+						<li><a href="#">手机</a>/<a href="">运营商</a>/<a href="">数码</a</li>
+						<li><a href="#">电脑</a>/<a href="">办公</a></li>
+						<li><a href="#">家居</a>/<a href="">家具</a>/<a href="">家装</a>/<a href="">厨具</a></li>
+						<li><a href="#">男装</a>/<a href="">女装</a>/<a href="">童装</a>/<a href="">内衣</a></li>
+						<li><a href="#">美妆</a>/<a href="">个人清洁</a>/<a href="">宠物</a></li>
+						<li><a href="#">女鞋</a>/<a href="">箱包</a>/<a href="">钟表</a>/<a href="">珠宝</a></li>
+						<li><a href="#">男鞋</a>/<a href="">运动</a><a href="户外"></a></li>
+						<li><a href="#">房产</a>/<a href="汽车"></a><a href="">汽车用品</a></li>
+						<li><a href="#">母婴</a>/<a href="">玩具乐器</a></li>
+						<li><a href="#">食品</a>/<a href="">酒类</a>/<a href="">生鲜</a>/<a href="">特产</a></li>
+						<li><a href="#">艺术</a>/<a href="">礼品鲜花</a>/<a href="">农资绿植</a></li>
+						<li><a href="#">医药保健</a>/<a href="">计生情趣</a></li>
+						<li><a href="#">图书</a>/<a href="">文娱</a>/<a href="">电子书</a></li>
+						<li><a href="#">机票</a>/<a href="">酒店</a>/<a href="">旅游</a>/<a href="">生活</a></li>
+						<li><a href="#">理财</a>/<a href="">众筹</a>/<a href="">白条</a>/<a href="">保险</a></li>
+						<li><a href="#">安装</a>/<a href="">维修</a>/<a href="">清洗</a>/<a href="">二手</a></li>
+						<li><a href="#">工业用品</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>		
+		<!-- 左侧悬浮框结束 -->
+		<!-- header 部分 导航栏 开始 -->
+		<header id="main">
+			<div class="nav wrap" id="main">
+					<ul class="fl city">
+						<li><img src="images/pic_-02.png" alt=""><a href="#"><span>江西</span></a></li>
+					</ul>
+					<ul class="fr fr-right">
+						<li>
+							<a href="登陆界面/登录界面.html">你好，请登录</a>
+							<a href="注册页面/注册页面.html"><span>免费注册</span></a>
+						</li>
+						<li class="space">|</li>
+						<li>	
+							<a href="二级页面/京东.html">我的订单</a>
+						</li>
+						<li class="space">|</li>
+						<li>
+							<a href="#">我的易购<img src="images/pic_-03.png" alt=""></a>
+						</li>
+						<li>
+							<a href="#">易购会员</a>
+						</li>
+						<li class="space">|</li>
+						<li>
+							<a href="#"><span>企业采购</span><img src="images/pic_-03.png" alt=""></a>
+						</li>
+						<li class="space">|</li>
+						<li>
+							<a href="#">客户服务<img src="images/pic_-03.png" alt=""></a>
+						</li>
+						<li class="space">|</li>
+						<li>
+							<a href="#">网站导航<img src="images/pic_-03.png" alt=""></a>
+						</li>
+						<li class="space">|</li>
+						<li>
+							<a href="#">手机易购</a>
+						</li>
+					</ul>
+			</div>
+		</header>
+		<!-- header部分结束 -->
+		<!-- 右边部分开始 -->
+		<section class="nav-right">
+		<!-- 搜索区域 -->
+		<div class="zxqy-top">
+			<div class="nav-search">
+				<form action="#" class="ss">
+					<input type="search" placeholder="外星人笔记本" class="sousuo">
+					<div class="pic"><img src="images/pic_-06.png" alt=""></div>
+					<div class="s1"><img src="images/pic_-04.png" alt=""></div>
+					<!-- <i class="iconfont"></i> -->
+				</form>
+			<div class="gouwuche">
+				<img src="images/pic_-05.png" alt="">
+				<span><a href="">我的购物车</a></span>
+				<div class="g1">0</div>
+			</div>
+			<div class="st">
+				<ul>
+					<li ><a href="" class="ShiShang">时尚秒杀日</a></li>
+					<li><a href="">爆品直降</a></li>
+					<li><a href="">抢荣耀20</a></li>
+					<li><a href="">母婴618</a></li>
+					<li><a href="">199减100</a></li>
+					<li><a href="">品降3折</a></li>
+					<li><a href="">香丹清</a></li>
+					<li><a href="">限时疯购</a></li>
+					<li><a href="">赢免单</a></li>
+				</ul>
+			</div>
+			<div class="navitems">
+				<ul>
+					<li><a href="#">秒杀</a></li>
+					<li><a href="#">优惠券</a></li>
+					<li><a href="#">PLUS会员</a></li>
+					<li><a href="#">闪购</a></li>
+					<li><a href="#">拍卖</a></li>
+					<li class="space"></li>
+					<li><a href="#">京东时尚</a></li>
+					<li><a href="#">京东超市</a></li>
+					<li><a href="#">京东生鲜</a></li>
+					<li><a href="#">全球购</a></li>	
+					<li class="space"></li>
+					<li><a href="#">京东金融</a></li>
+				</ul>
+			</div>
+			<!-- 超级日部分 -->
+			<div class="super">
+				<a href="#"><img src="images/pic_-07.png" height="40" width="190" alt=""></a>
+			</div>
+			</div>
+		</div>	
+		<div class="zxqy">
+				<div id="flash">
+					<ul id="pic">
+						<li style="display:block"><img src="images/circle.png" alt=""></li>
+						<li><img src="images/circle-01.png" alt=""></li>
+						<li><img src="images/circle-02.png" alt=""></li>
+						<li><img src="images/circle-03.png" alt=""></li>
+						<li><img src="images/circle-04.png" alt=""></li>
+						<li><img src="images/circle-05.png" alt=""></li>
+					</ul>
+					<ul id="num">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<a href="javascript:;" class="arrow" id="left">&lt;</a>
+					<a href="javascript:;" class="arrow" id="right">&gt;</a> 
+				</div>
+			<div class="zxqy-center">
+				<ul>
+					<li><a href="#"><img src="images/center-01.png" alt=""></a></li>
+					<li><a href="#"><img src="images/center-02.png" alt=""></a></li>
+					<li><a href="#"><img src="images/center-03.png" alt=""></a></li>
+				</ul>
+			</div>
+			<div class="zxqy-right">
+				<div class="zxqy-right-top">
+					<img src="images/no_login.jpg" alt="" width="70px" height="70px">		
+					<span>Hi~欢迎来到易购！</span>
+					<ul>
+						<li><a href="#">登录</a></li>
+						<li><a href="#">注册</a></li>
+					</ul>
+					<div class="xr">新人福利</div>
+					<div class="plus">PLUS会员</div>
+				</div>
+				<div class="zxqy-right-center">
+					<div class="wt">
+						<p class="wt-1">易购快报</p>
+						<p class="wt-2">更多></p>
+					</div>
+					<div class="ww">
+						<div class="box-1">推荐</div><span class="wen-1"><a href="">美国突然和华为宣布终止合作</a></span>
+						<div class="box-2">热议</div><span class="wen-2"><a href="">5g版华为mate X已经上市，欲购从速</a></span>
+						<div class="box-3">热评</div><span class="wen-3"><a href="">5488跌至3588，华为宣布大降价</a></span>
+						<div class="box-3">推荐</div><span class="wen-4"><a href="">华为官宣：鸿蒙系统问世</a></span>
+					</div>
+				</div>
+				<div class="zxqy-right-bottom">
+					<ul>
+						<li><a href="#"><img src="images/tubiao-04.png" alt=""><p>话费</p></a></li>
+						<li><a href="#"><img src="images/tubiao-03.png" alt=""><p>机票</p></a></li>
+						<li><a href="#"><img src="images/tubiao.png" alt=""><p>酒店</p></a></li>
+						<li><a href="#"><img src="images/tubiao-02.png" alt=""><p>游戏</p></a></li>
+						<li><a href="#"><img src="images/tubiao-07.png" alt=""><p>企业</p></a></li>
+						<li><a href="#"><img src="images/tubiao-08.png" alt=""><p>加油</p></a></li>
+						<li><a href="#"><img src="images/tubiao-05.png" alt=""><p>电影</p></a></li>
+						<li><a href="#"><img src="images/tubiao-06.png" alt=""><p>火车</p></a></li>
+						<li><a href="#"><img src="images/tubiao-11.png" alt=""><p>众筹</p></a></li>
+						<li><a href="#"><img src="images/tubiao-09.png" alt=""><p>理财</p></a></li>
+						<li><a href="#"><img src="images/tubiao-10.png" alt=""><p>礼品</p></a></li>
+						<li><a href="#"><img src="images/tubiao-12.png" alt=""><p>白条</p></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>		
+		</section>
+	</div>
+	<!-- 右边部分结束 -->
+	<!-- 居家优品 开始-->
+	<section class="jujia">
+		<h2>-----居家优品-----</h2>
+		<div class="jujia-j">
+			<a href=""><img src="images/neirong.jpg" alt="" width="425px" height="525px"></a>
+			<div class="jujia-s"></div>
+		</div>
+		<div class="jujia-j">
+		<div class="jiadian"><a href="">家电馆</a><span>>家电好物节</span></div>
+			<div class="jujia-center-t">
+				<a href=""><img src="images/neirong-02.jpg" alt=""></a>
+			</div>
+				<div class="jujia-center-bl">
+					<a href=""><img src="images/neirong-04.jpg" alt=""></a>
+					<a href=""><img src="images/neirong-05.jpg" alt=""></a>
+				</div>
+			</div>
+		<div class="jujia-j">
+		<div class="wai"><a href="">我爱我家</a><span>>品质生活家</span></div>
+			<div class="jujia-right-t">
+				<a href=""><img src="images/neirong-03.jpg" alt=""></a>
+			</div>
+			<div class="jujia-right-b">
+				<div class="jujia-right-bl">
+					<a href=""><img src="images/neirong-04.jpg" alt=""></a>
+					<a href=""><img src="images/neirong-07.jpg" alt=""></a>
+				</div>
+			<!-- 	<div class="jujia-right-br">
+					
+				</div> -->
+			</div>
+		</div>
+	</section>
+	<!-- 居家优品结束 -->
+	<!-- 页面底部分开始  -->
+	<footer id="main">
+		<!-- 服务模块 -->
+		<div class="service" id="main">
+			<div class="w">
+				<ul>
+					<li>
+						<h5>多</h5>
+						<p>品类齐全，轻松购物</p>
+					</li>
+					<li>
+						<h5>多</h5>
+						<p>品类齐全，轻松购物</p>
+					</li>
+					<li>
+						<h5>多</h5>
+						<p>品类齐全，轻松购物</p>
+					</li>
+					<li>
+						<h5>多</h5>
+						<p>品类齐全，轻松购物</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 帮助模块 -->
+		<div class="wrap help">
+			<div class="fl">
+				<dl>
+					<dt>购物指南</dt>
+					<dd><a href="#">购物流程</a></dd>
+					<dd><a href="#">会员介绍</a></dd>
+					<dd><a href="#">生活旅行</a></dd>
+					<dd><a href="#">常见问题</a></dd>
+					<dd><a href="#">大家电</a></dd>
+					<dd><a href="#">联系客服</a></dd>
+				</dl>
+				<dl>
+					<dt>配送方式</dt>
+					<dd><a href="#">上们自提</a></dd>
+					<dd><a href="#">211限时达</a></dd>
+					<dd><a href="#">配送服务查询</a></dd>
+					<dd><a href="#">配送费收取标准</a></dd>
+					<dd><a href="#">海外配送</a></dd>
+				</dl>
+				<dl>
+					<dt>支付方式</dt>
+					<dd><a href="#">货到付款</a></dd>
+					<dd><a href="#">在线支付</a></dd>
+					<dd><a href="#">分期付款</a></dd>
+					<dd><a href="#">邮局汇款</a></dd>
+					<dd><a href="#">公司转账</a></dd>
+				</dl>
+				<dl>
+					<dt>售后服务</dt>
+					<dd><a href="#">售后政策</a></dd>
+					<dd><a href="#">价格保护</a></dd>
+					<dd><a href="#">退款说明</a></dd>
+					<dd><a href="#">返修/退换货</a></dd>
+					<dd><a href="#">取消订单</a></dd>
+				</dl>
+				<dl>
+					<dt>特色服务</dt>
+					<dd><a href="#">夺宝岛</a></dd>
+					<dd><a href="#">DIY装机</a></dd>
+					<dd><a href="#">延保服务</a></dd>
+					<dd><a href="#">易购Y卡</a></dd>
+					<dd><a href="#">易购通信</a></dd>
+					<dd><a href="#">易购智能</a></dd>
+				</dl>
+			</div>
+			<div class="fr coverage">
+				<h5>易购自营覆盖区县</h5>
+				<p>易购已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+				<a href="#">查看详情 > </a>
+			</div>
+		</div>
+
+		<div class="w copyright">
+			<p> 
+				<a href="#">关于我们</a>
+				<span>|</span> 
+				<a href="#">联系我们</a>
+				<span>|</span> 
+				<a href="#">联系客服</a>
+				<span>|</span> 
+				<a href="#">合作招商</a>
+				<span>|</span> 
+				<a href="#">商家帮助</a>
+				<span>|</span> 
+				<a href="#">营销中心</a>
+				<span>|</span> 
+				<a href="#">手机易购</a>
+				<span>|</span> 
+				<a href="#">友情链接</a>
+				<span>|</span> 
+				<a href="#">销售联盟</a>
+				<span>|</span> 
+				<a href="#">风险监测</a>
+				<span>|</span> 
+				<a href="#">隐私政策</a>
+				<span>|</span> 
+				<a href="#">易购公益</a>
+				<span>|</span> 
+				<a href="#">English Site</a>
+				<span>|</span> 
+				<a href="#">Media & IR</a>
+				<span>|</span> 
+
+			</p>
+			<div>
+				<p>京公网安备 11000002000088号<span>|</span>京ICP证070359号<span>|</span>互联网药品信息服务资格证编号(京)-经营性-2014-0008<span>|</span>新出发京零 字第大120007号</p>
+				<p>互联网出版许可证编号新出网证(京)字150号<span>|</span>出版物经营许可证<span>|</span>网络文化经营许可证京网文[2014]2148-348号<span>|</span>违法和不良信息举报电话：4006561155</p>
+				<p>Copyright © 2004 - 2017  易购YG.com 版权所有|消费者维权热线：4006067733经营证照京东旗下网站：京东支付|京东云</p>
+			</div>
+			<p class="foot-icon">
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+			</p>
+
+		</div>
+	</footer>
+	<!-- 页面底部分结束 -->
+</body>
+</html>
